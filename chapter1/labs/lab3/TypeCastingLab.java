@@ -10,11 +10,38 @@ public class TypeCastingLab {
         // TODO: 1. 자동 형변환(Implicit Casting) 예제
         // byte -> int, int -> long, long -> float, float -> double 순으로 
         // 변수를 선언하고 자동 형변환을 수행한 뒤 결과 출력하기
-        
+        byte a = 55;
+        int b = a;
+        long c = a;
+        float d = a;
+        double e = a;
+        System.out.println("a: " + a);
+        System.out.println("b: " + b);
+        System.out.println("c: " + c);
+        System.out.println("d: " + d);
+        System.out.println("e: " + e);
+
         
         // TODO: 2. 명시적 형변환(Explicit Casting) 예제
         // double -> float -> long -> int -> char -> short -> byte 순으로
         // 변수를 선언하고 명시적 형변환을 수행한 뒤 결과 출력하기
+        double f = 200.546;
+        float g = (float) f;
+        long h = (long) g;
+        int i = (int) h;
+        char j = (char) i;
+        short k = (short) j;
+        byte l = (byte) k;
+
+        System.out.println("f: "+f);
+        System.out.println("g: "+g);
+        System.out.println("h: "+h);
+        System.out.println("i: "+i);
+        System.out.println("j: "+j);
+        System.out.println("k: "+k);
+        System.out.println("l: "+l);
+
+
         
         
         // TODO: 3. 데이터 손실 확인하기

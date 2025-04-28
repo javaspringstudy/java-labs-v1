@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        SONARQUBE_SERVER = 'SonarQube-Server' // Jenkins에 등록된 소나큐브 서버 이름
+        SONARQUBE_SERVER = 'java-labs-v1-SonarQube-Server' // Jenkins에 등록된 소나큐브 서버 이름
     }
 
     stages {

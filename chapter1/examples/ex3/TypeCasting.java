@@ -52,7 +52,8 @@ public class TypeCasting {
         // 정수 연산 (int보다 작은 타입(byte, short, char)은 int로 변환 후 연산)
         byte b1 = 10;
         byte b2 = 20;
-        // byte b3 = b1 + b2;  // 컴파일 에러! b1과 b2는 int로 변환 후 연산됨
+
+        //byte b3 = b1 + b2;  // 컴파일 에러! b1과 b2는 int로 변환 후 연산됨. byte의 연산결과는 int
         int i3 = b1 + b2;      // int 타입으로 결과 저장
         byte b3 = (byte)(b1 + b2);  // 명시적 형변환으로 해결
         
@@ -78,7 +79,7 @@ public class TypeCasting {
         // 5. 타입 변환 메소드
         System.out.println("\n===== 타입 변환 메소드 =====");
         
-        // 문자열 -> 기본 타입
+        // 문자열 -> 기본 타입 (Wrapper Class 사용)
         int i5 = Integer.parseInt("123");
         double d5 = Double.parseDouble("3.14");
         boolean b5 = Boolean.parseBoolean("true");
