@@ -3,7 +3,7 @@ package chapter1.examples.ex2;
 /**
  * 자바의 기본 데이터 타입과 변수 사용 예제
  */
-public class DataTypes {
+public class DataTypes{
     public static void main(String[] args) {
         // 정수형 데이터 타입
         byte byteValue = 10;            // 1바이트, -128 ~ 127
