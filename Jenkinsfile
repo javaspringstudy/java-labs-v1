@@ -26,13 +26,15 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv("${SONARQUBE_SERVER}") {
-                    sh '''
+                    withEnv(["PATH+SONAR=${tool 'SonarScanner'}/bin"]) {
+                        sh """
                         sonar-scanner \
-                          -Dsonar.projectKey=java-labs-v1 \
-                          -Dsonar.projectName=java-labs-v1 \
-                          -Dsonar.sources=chapter1 \
-                          -Dsonar.java.binaries=out
-                    '''
+                        -Dsonar.projectKey=java-labs-v1 \
+                        -Dsonar.projectName=java-labs-v1 \
+                        -Dsonar.sources=chapter1 \
+                        -Dsonar.java.binaries=out
+                        """
+                    }
                 }
             }
         }
