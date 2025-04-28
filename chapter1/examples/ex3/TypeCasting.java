@@ -14,7 +14,7 @@ public class TypeCasting {
         System.out.println("int 값: " + intValue);
         
         char charValue = 'A';
-        intValue = charValue;      // char -> int 자동 형변환
+        intValue = charValue; //65     // char -> int (호환가능) 자동 형변환
         System.out.println("char 값: " + charValue);
         System.out.println("int 값: " + intValue);  // 'A'의 유니코드 값 65
         
@@ -36,7 +36,7 @@ public class TypeCasting {
         System.out.println("double 값: " + doubleValue2);
         System.out.println("int 값: " + intValue);
         
-        intValue = 129;
+        intValue = 129;// -> 이진수로표현 00000000 00000000 00000001 00000001
         byteValue = (byte) intValue;    // int -> byte 명시적 형변환 (범위 초과로 값 손실)
         System.out.println("int 값: " + intValue);
         System.out.println("byte 값: " + byteValue);  // byte 범위(-128~127)를 벗어나 오버플로우 발생
