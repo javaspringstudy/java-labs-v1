@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh '''
                     mkdir -p out
-                    javac -d out $(find src -name "*.java")
+                    javac -d out $(find chapter1 -name "*.java")
                 '''
             }
         }
@@ -30,7 +30,7 @@ pipeline {
                         sonar-scanner \
                           -Dsonar.projectKey=java-labs-v1 \
                           -Dsonar.projectName=java-labs-v1 \
-                          -Dsonar.sources=src \
+                          -Dsonar.sources=chapter1 \
                           -Dsonar.java.binaries=out
                     '''
                 }
