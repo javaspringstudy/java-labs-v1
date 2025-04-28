@@ -46,11 +46,18 @@ public class TypeCastingLab {
         
         // TODO: 3. 데이터 손실 확인하기
         // int 값을 byte로 변환하여 데이터 손실이 발생하는 예제 작성하기
+        int hp = 1072943724;
+        byte byte_hp = (byte) hp;
+        System.out.println("byte_hp: "+byte_hp);//108
         
         
         // TODO: 4. 문자열과 숫자 간 변환하기
         // 문자열 "123"을 정수로, "3.14"를 실수로 변환하기
-        
+        int num = Integer.parseInt("123");
+        System.out.println("num: "+num);
+
+        double pai = Double.parseDouble("3.14");
+        System.out.println("pai: "+pai);
         
         // TODO: 5. 숫자를 문자열로 변환하기
         // 정수 456과 실수 7.89를 문자열로 변환하기
