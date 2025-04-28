@@ -1,25 +1,20 @@
 pipeline {
     agent any
 
-    stages{
-        stage('SonarQube Analysis'){
-            steps{
-                container('gradle') {
-                    withSonarQubeEnv('SonarQube-Server'){
-                        sh '''
-                            chmod +x ./gradlew 
-                            ./gradlew clean build sonarqube \
-                            -Dsonar.projectKey=java-labs-v1 \
-                            -Dsonar.projectName=java-labs-v1
-                        '''
-                    }
+    stages {
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube-Server') {
+                    sh '''
+                        sonar-scanner \
+                        -Dsonar.projectKey=java-labs-v1 \
+                        -Dsonar.projectName=java-labs-v1 \
+                        -Dsonar.sources=src
+                    '''
                 }
             }
         }
-
-
-    }//stages
-
+    }
 
     post {
         always {
@@ -37,5 +32,5 @@ pipeline {
                 webhookURL: "${DISCORD_WEBHOOK_URL}"
             }
         }
-    }//post
+    }
 }
