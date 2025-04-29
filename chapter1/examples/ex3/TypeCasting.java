@@ -54,11 +54,9 @@ public class TypeCasting {
         byte b1 = 10;
         byte b2 = 20;
 
-<<<<<<< HEAD
+
         //byte b3 = b1 + b2;  // 컴파일 에러! b1과 b2는 int로 변환 후 연산됨. byte의 연산결과는 int
-=======
-//        byte b3 = b1 + b2;   // 컴파일 에러! b1과 b2는 int로 변환 후 연산됨
->>>>>>> upstream/main
+
         int i3 = b1 + b2;      // int 타입으로 결과 저장
         byte b3 = (byte)(b1 + b2);  // 명시적 형변환으로 해결
         
