@@ -61,6 +61,12 @@ public class TypeCastingLab {
         
         // TODO: 5. 숫자를 문자열로 변환하기
         // 정수 456과 실수 7.89를 문자열로 변환하기
-        
+        int number = 456;
+        String strNumber = Integer.toString(number);
+        System.out.println("strNumber: "+strNumber);
+
+        Double score = 7.89;
+        String strScore = Double.toString(score);
+        System.out.println("strScore: "+strScore);
     }
 } 
