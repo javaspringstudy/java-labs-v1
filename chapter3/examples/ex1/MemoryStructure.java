@@ -4,10 +4,10 @@ package chapter3.examples.ex1;
  * 자바의 메모리 구조(스택, 힙, 메소드 영역) 예제
  */
 public class MemoryStructure {
-    // 클래스 변수(static 변수) - 메소드 영역에 저장
+    // 클래스 변수(static 정적변수) - 메소드 영역에 저장
     static int staticVariable = 100;
     
-    // 인스턴스 변수 - 힙 영역에 저장
+    // 인스턴스 변수 - 클래스의 멤버이므로 heap 영역에 저장
     int instanceVariable = 200;
     
     public static void main(String[] args) {

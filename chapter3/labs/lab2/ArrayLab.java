@@ -1,5 +1,6 @@
 package chapter3.labs.lab2;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -8,26 +9,75 @@ import java.util.Scanner;
 public class ArrayLab {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        if(false) {
+            // 1. 정수형 배열 활용
+            System.out.println("===== 정수형 배열 활용 =====");
+
+            // TODO: 5개의 정수를 입력받아 배열에 저장하고, 합계와 평균을 계산하여 출력하세요.
+            // 힌트: Scanner를 이용하여 사용자로부터 입력을 받으세요.
+            System.out.println("콤마로 구분하여 5개의 정수를 입력하세요");
+            String[] scoreArr = scanner.nextLine().split(",");
+
+            int sum = 0;//합계
+            for (String score : scoreArr) {
+                sum += Integer.parseInt(score);
+            }
+            System.out.println("총점 = " + sum);
+
+
+            double avg = (double) sum / 5 + (double) sum % 5;//평균
+            System.out.println("평균 = " + avg);
+        }
+
+
+        if(false) {
+            // 2. 문자열 배열 활용
+            System.out.println("\n===== 문자열 배열 활용 =====");
+
+            // TODO: 5개의 이름을 입력받아 배열에 저장하고, 특정 문자(예: 'A')로 시작하는 이름을 검색하여 출력하세요.
+            // 힌트: String 클래스의 startsWith() 또는 charAt() 메소드를 활용하세요.
+            System.out.println("5개의 이름을 콤마로 구분하여 입력하세요");
+            String[] nameArr = scanner.nextLine().split(",");
+
+            System.out.println("'A'로 시작하는 이름 출력");
+            for (String name : nameArr) {
+                if (name.trim().startsWith("A")) System.out.println(name);
+            }
+        }
+
+
+        if(true) {
+
+            // 3. 배열 정렬
+            System.out.println("\n===== 배열 정렬 =====");
+
+            // TODO: 사용자로부터 5개의 정수를 입력받아 배열에 저장한 후, 오름차순으로 정렬하여 출력하세요.
+            // 힌트: 이중 반복문을 사용하여 버블 정렬 알고리즘을 구현하거나, Arrays.sort()를 활용하세요.
+            System.out.println("정수를 입력을 하나씩 5번 하면 정렬되어 출력됩니다.");
+            int[] nums = new int[5];
+            for (int i = 0; i < 5; i++) {
+                nums[i] = scanner.nextInt();
+            }
+
+            //버블정렬
+            int temp = 0;
+            for(int i=0;i<nums.length-1;i++) {//총회전수
+                for(int j=i+1;j<nums.length;j++) {
+                    if(nums[i] > nums[j]) {
+                        temp = nums[i];
+                        nums[i] = nums[j];
+                        nums[j] = temp;
+                    }
+                }
+            }
+
+            System.out.println("정렬결과 : " + Arrays.toString(nums));
+        }
+
+
         
-        // 1. 정수형 배열 활용
-        System.out.println("===== 정수형 배열 활용 =====");
-        
-        // TODO: 5개의 정수를 입력받아 배열에 저장하고, 합계와 평균을 계산하여 출력하세요.
-        // 힌트: Scanner를 이용하여 사용자로부터 입력을 받으세요.
-        
-        
-        // 2. 문자열 배열 활용
-        System.out.println("\n===== 문자열 배열 활용 =====");
-        
-        // TODO: 5개의 이름을 입력받아 배열에 저장하고, 특정 문자(예: 'A')로 시작하는 이름을 검색하여 출력하세요.
-        // 힌트: String 클래스의 startsWith() 또는 charAt() 메소드를 활용하세요.
-        
-        
-        // 3. 배열 정렬
-        System.out.println("\n===== 배열 정렬 =====");
-        
-        // TODO: 사용자로부터 5개의 정수를 입력받아 배열에 저장한 후, 오름차순으로 정렬하여 출력하세요.
-        // 힌트: 이중 반복문을 사용하여 버블 정렬 알고리즘을 구현하거나, Arrays.sort()를 활용하세요.
+
         
         
         // 4. 2차원 배열을 이용한 행렬 덧셈
@@ -35,6 +85,10 @@ public class ArrayLab {
         
         // TODO: 두 개의 2x3 행렬을 입력받아 행렬 덧셈을 수행하고 결과를 출력하세요.
         // 힌트: 중첩 반복문을 사용하세요.
+
+
+
+
         
         
         // 5. 배열을 이용한 간단한 데이터 분석
